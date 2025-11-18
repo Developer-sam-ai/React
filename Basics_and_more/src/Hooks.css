@@ -1,0 +1,17 @@
+.upper{
+    background-color: rgb(17, 78, 78);
+    text-align: center;
+    /* display: grid;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0px;
+    margin-bottom:0% ; */
+}
+.lower{
+    text-align: center;
+    
+}
+button{
+    display: inline-flex;
+    margin:10px;
+}
