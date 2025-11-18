@@ -1,0 +1,3 @@
+we have -D in installing tailwindcss so it is beacuase it is a dev dependency
+we have dev dependenices and dependecies and when the project 
+is loaded only dependecies are loaded not dev dependencies

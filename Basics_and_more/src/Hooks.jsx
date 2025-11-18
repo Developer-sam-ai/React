@@ -28,8 +28,8 @@ function Hooks() {
   </div>
   <div className='lower'>
 {/*  just to test */}
-  <button  onClick={clunk}>Add: {counter}</button>
-  <button onClick={()=>{let back=counter-1;
+  <button  onClick={clunk} className='bg-green-400 p-3 text-green-950 rounded-md'>Add: {counter}</button>
+  <button className='bg-green-400 p-3 text-green-950 rounded-md'  onClick={()=>{let back=counter-1;
     if(back<0)return;
     setCounter(back);
   }}>subtract{counter}</button>
