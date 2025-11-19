@@ -1,10 +1,11 @@
 
 
-function Tailwind(){
+function Tailwind(props){
+  console.log("props",props);
     return (
 <>
 <div className="bg-blue-300">
-<div class="flex font-sans" >
+<div className="flex font-sans" >
   <div class="flex-none w-56 relative">
     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRceZ3oUQdQYWeMUU-SACGl5khf-uy3QUfExg&s" alt="" class="absolute inset-0 w-full h-full object-cover rounded-lg" loading="lazy" />
   </div>
@@ -23,7 +24,7 @@ function Tailwind(){
     <div class="flex items-baseline mt-4 mb-6 pb-6 border-b border-slate-200">
       <div class="space-x-2 flex text-sm font-bold">
         <label>
-          <input class="sr-only peer" name="size" type="radio" value="xs" checked />
+          <input class="sr-only peer" name="size" type="radio" value="xs" defaultChecked />
           <div class="w-9 h-9 rounded-full flex items-center justify-center text-violet-400 peer-checked:bg-violet-600 peer-checked:text-white">
             XS
           </div>
