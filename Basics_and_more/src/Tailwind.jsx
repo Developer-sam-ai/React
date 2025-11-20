@@ -12,10 +12,11 @@ function Tailwind(props){
   <form class="flex-auto p-6">
     <div class="flex flex-wrap">
       <h1 class="flex-auto font-medium text-slate-900">
-        Kids Jumpsuit
+        {props.name || "raja"}
+        {/* //^here we added a  defalult value */}
       </h1>
       <div class="w-full flex-none mt-2 order-1 text-3xl font-bold text-violet-600">
-        $39.00
+        {props.cost}
       </div>
       <div class="text-sm font-medium text-slate-400">
         In stock
