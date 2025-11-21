@@ -1,24 +1,12 @@
-import { useState } from 'react'
-import './App.css'
 
-function App() {
-  const [color, setColor] = useState("green");
+import Colorchanger from "./small projects/Colorchanger";
 
-  return (
-    <>
-    <div
-      className="w-full h-screen duration-150"
-      style={{ backgroundColor: color }}
-    >
-      <div className='fixed flex flex-wrap'></div>
-      <div className=''>
-        <button>hello</button>
-      </div>
-    </div>
-
-    
-    </>
-  );
+function App(){
+    return(
+        <>
+        <Colorchanger/>
+        </>
+    );
 }
 
-export default App
+export default App;
