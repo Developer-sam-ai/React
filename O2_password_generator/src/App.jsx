@@ -20,7 +20,7 @@ function App() {
     Setpassword(res);
   },[length,numberallowed,charcterallowed, Setpassword])
 
-  
+  passwordgenrator;
   return (
     <>
         {/* <h1 className="flex items-center justify-center bg-red-400 p-3  w-fit ">password generator</h1> */}
@@ -28,10 +28,42 @@ function App() {
   password generator
 </h1>
 
-    <div className='bg-gray-800 w-full flex justify-center mx-auto shadow-md h-32 px-1 my-1 rounded-3xl text-red-400 w-fit'>
-      <div className=' rounded-lg overflow-hidden mb-4'>
+    <div className='bg-gray-800  mt-3 flex flex-col items-center mx-auto w-fit  shadow-md h-32 px-8 my-1 rounded-md text-blue-300 '>
+      <div className='mt-4 flex rounded-lg overflow-hidden mb-5 h-11 w-fit'>
         <input type='text' value={password} className='outline-none w-full py-1 px-4'
         placeholder='password'/>
+        <button className='bg-blue-800 w-16'>copy</button>
+      </div>
+      <div className='flex text-sm gap-x-2'>
+      <div className='flex flex-col items-center gap-x-1 '>
+          <input type="range" 
+          min={6}
+          max={80}
+          value={length}
+          className='cursor-progress'
+          onChange={(e)=>{setlength(e.target.value)}}/>
+          <label>Length: {length}</label>
+      </div>
+      <div >
+        <input type="checkbox" 
+        defaultChecked={numberallowed}
+        className='peer h-3 w-3 cursor-pointer appearance-none rounded-md border-2 border-gray-400 checked:bg-blue-800 checked:border-blue-800 transition-all'
+        id='numberInput'
+        onChange={()=>{
+            setnumberallowed((prev)=>!prev);
+        }}/>
+        <label htmlFor="numberInput" className='text-center'> Number</label>
+      </div>
+        <div>
+          <input type="checkbox"
+          defaultChecked={charcterallowed}
+          className='peer h-3 w-3 cursor-pointer appearance-none rounded-md border-2 border-gray-400 checked:bg-blue-600 checked:border-blue-600 transition-all'
+          id='characterinput'
+          onChange={()=>{
+            Setcharcacterallowed((prev)=>!prev);
+          }}/>
+          <label htmlFor="charcterInput"> Character</label>
+        </div>
       </div>
     </div>
     </>
