@@ -1,4 +1,4 @@
-import { useState,useCallback } from 'react'
+import { useState,useCallback,useEffect } from 'react'
 import './App.css'
 
 function App() {
@@ -20,7 +20,8 @@ function App() {
     Setpassword(res);
   },[length,numberallowed,charcterallowed, Setpassword])
 
-  passwordgenrator();
+  // passwordgenrator();
+  
 
   //! too many rerenders react limit inifinite loop so we cant call password generator 
   //~ and we cant call them as well as here we have used callback but even if we have the direct thing we cant do that 
