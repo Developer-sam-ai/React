@@ -20,7 +20,10 @@ function App() {
     Setpassword(res);
   },[length,numberallowed,charcterallowed, Setpassword])
 
-  passwordgenrator;
+  passwordgenrator();
+
+  //! too many rerenders react limit inifinite loop so we cant call password generator 
+  //~ and we cant call them as well as here we have used callback but even if we have the direct thing we cant do that 
   return (
     <>
         {/* <h1 className="flex items-center justify-center bg-red-400 p-3  w-fit ">password generator</h1> */}
