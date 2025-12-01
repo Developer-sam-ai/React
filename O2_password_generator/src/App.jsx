@@ -55,6 +55,7 @@ function App() {
   password generator
 </h1>
 
+
     <div className='bg-gray-800  mt-3 flex flex-col items-center mx-auto w-fit  shadow-md h-32 px-8 my-1 rounded-md text-blue-300 '>
       <div className='mt-4 flex rounded-lg overflow-hidden mb-5 h-11 w-fit'>
         <input type='text' value={password} ref={passwordref} className='outline-none w-full py-1 px-4'
