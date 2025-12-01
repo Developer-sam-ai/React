@@ -1,11 +1,25 @@
-import { useState,useCallback,useEffect } from 'react'
+import { useState,useCallback,useEffect,useRef } from 'react'
 import './App.css'
 
 function App() {
   const [length,setlength]=useState(8);
   const [numberallowed,setnumberallowed]=useState(false);
   const [charcterallowed,Setcharcacterallowed]=useState(false);
-  const [password,Setpassword]=useState("")
+  const [password,Setpassword]=useState("");
+  const [copied,setCopied]=useState(false);
+
+  //ref hook
+  const passwordref=useRef(null);
+
+  const copypassword_clipboard=useCallback(()=>{
+    passwordref.current?.select()
+    window.navigator.clipboard.writeText(password)
+    setCopied(true);
+    setTimeout(()=>{
+      setCopied(false);
+    },1000)
+    // in serverside we dont have window option ^ will see in nextjs
+  },[password]);
 
   const passwordgenrator=useCallback(()=>{
     let res=""
@@ -14,17 +28,26 @@ function App() {
     if(charcterallowed) str+='!@#$%^&*()';
 
     for(let i=1;i<=length;i++){
-      let cha=Math.floor(Math.random()*str.length+1)
-      res=str.charAt(cha);
+      let char=Math.floor(Math.random()*str.length+1)
+      res+=str.charAt(char);
     }
     Setpassword(res);
   },[length,numberallowed,charcterallowed, Setpassword])
 
   // passwordgenrator();
-  
+  useEffect(()=>{
+    passwordgenrator()
+  },[length,numberallowed,charcterallowed,passwordgenrator])
 
   //! too many rerenders react limit inifinite loop so we cant call password generator 
   //~ and we cant call them as well as here we have used callback but even if we have the direct thing we cant do that 
+  
+  //^ never compare the inputs of the password generator callback to the use effect both has 
+  //^ different work to do in call back we optimise the method here we just optiise
+
+  //^ and in use effect we are like any changes in these just rerun
+
+  
   return (
     <>
         {/* <h1 className="flex items-center justify-center bg-red-400 p-3  w-fit ">password generator</h1> */}
@@ -34,9 +57,9 @@ function App() {
 
     <div className='bg-gray-800  mt-3 flex flex-col items-center mx-auto w-fit  shadow-md h-32 px-8 my-1 rounded-md text-blue-300 '>
       <div className='mt-4 flex rounded-lg overflow-hidden mb-5 h-11 w-fit'>
-        <input type='text' value={password} className='outline-none w-full py-1 px-4'
+        <input type='text' value={password} ref={passwordref} className='outline-none w-full py-1 px-4'
         placeholder='password'/>
-        <button className='bg-blue-800 w-16'>copy</button>
+        <button onClick={copypassword_clipboard}  className={'bg-blue-800 w-16 '}>{copied?"copied":"copy"}</button>
       </div>
       <div className='flex text-sm gap-x-2'>
       <div className='flex flex-col items-center gap-x-1 '>
