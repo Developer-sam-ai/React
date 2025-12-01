@@ -1,5 +1,5 @@
 {
-  "name": "o3-currency-project",
+  "name": "o3-currency-convertor",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -24,7 +24,7 @@
     "eslint-plugin-react-refresh": "^0.4.24",
     "globals": "^16.5.0",
     "postcss": "^8.5.6",
-    "tailwindcss": "3.2",
+    "tailwindcss": "^3.4.1",
     "vite": "^7.2.4"
   }
 }
