@@ -1,12 +1,88 @@
 
 import './App.css'
-
+import { Input } from './component'
+import {useCurrencyinfo} from './hooks/useCurrency'
+import { useState } from 'react'
 // Generating custom hooks 
 function App() {
+  const [amount,setamount]=useState(0);
+  const[from,setFrom]=useState('inr');
+  const[to,setTo]=useState('usd');
+  const[convertedamount,setconvertedamount]=useState(0)
   
+  const currencyinfo=useCurrencyinfo(from);
+  const options = currencyinfo ? Object.keys(currencyinfo) : [];
+
+
+  const swap=()=>{
+    setFrom(to);
+    setTo(from);
+    setconvertedamount(amount)
+    setamount(convertedamount)
+  }
+  const convert=()=>{
+    setconvertedamount(amount*currencyinfo[to]||0)
+  }
+  const BackgroundImage="https://t3.ftcdn.net/jpg/04/34/58/54/360_F_434585463_zpdtTpTEbqQFfsp6RVEW6IIxEM9dHf86.jpg"
   return (
+    // we always copy image address
     <>
-      <h2 className='bg-red-400 text-3xl'>hello</h2>
+  <div
+            className="w-full h-screen flex flex-wrap justify-center items-center bg-cover bg-no-repeat"
+            style={{
+                backgroundImage: `url('${BackgroundImage}')`,
+            }}
+        >
+          
+            <div className="w-full">
+                <div className="w-full max-w-md mx-auto border border-gray-60 rounded-lg p-5 backdrop-blur-sm bg-white/30">
+                    <div className='w-full text-center mb-6'>
+                    <h1 className='text-3xl font-bold text-white'>Currency Converter</h1>
+                    </div>
+                    
+                    <form
+                        onSubmit={(e) => {
+                            e.preventDefault();
+                            convert();
+                        }}
+                    >
+                        <div className="w-full mb-1">
+                            <Input
+                                label="From"
+                                amount={amount}
+                                currencyOptions={options}
+                                onAmountchange={(amount)=>{
+                                  setamount(amount)
+                                }}
+                                onCurrencyChange={(currency)=>setFrom(currency)}
+                                selectcurrency={from}
+                            />
+                        </div>
+                        <div className="relative w-full h-0.5">
+                            <button
+                                type="button"
+                                className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 border-2 border-white rounded-md bg-blue-600 text-white px-2 py-0.5"
+                                onClick={swap}
+                            >
+                                swap
+                            </button>
+                        </div>
+                        <div className="w-full mt-1 mb-4">
+                            <Input
+                                label="To"
+                                amount={convertedamount}
+                                currencyOptions={options}
+                                onCurrencyChange={(currency)=>setTo(currency)}
+                                selectcurrency={to}
+                            />
+                        </div>
+                        <button type="submit" className="w-full bg-blue-600 text-white px-4 py-3 rounded-lg">
+                            Convert {from.toUpperCase()} to{to.toUpperCase()}
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </>
   )
 }
