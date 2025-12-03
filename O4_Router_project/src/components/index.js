@@ -1,5 +1,6 @@
 import Footer from "./Footer/Footer";
 import Header from "./Header/Header";
 import Home from "./Home/Home";
+import About from "./About/About";
 
-export{Footer,Header,Home};
+export{Footer,Header,Home,About};
