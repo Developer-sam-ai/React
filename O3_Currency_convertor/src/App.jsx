@@ -5,10 +5,10 @@ import {useCurrencyinfo} from './hooks/useCurrency'
 import { useState } from 'react'
 // Generating custom hooks 
 function App() {
-  const [amount,setamount]=useState(0);
+  const [amount,setamount]=useState('');
   const[from,setFrom]=useState('inr');
   const[to,setTo]=useState('usd');
-  const[convertedamount,setconvertedamount]=useState(0)
+  const[convertedamount,setconvertedamount]=useState('')
   
   const currencyinfo=useCurrencyinfo(from);
   const options = currencyinfo ? Object.keys(currencyinfo) : [];
@@ -77,14 +77,14 @@ function App() {
                             />
                         </div>
                         <button type="submit" className="w-full bg-blue-600 text-white px-4 py-3 rounded-lg">
-                            Convert {from.toUpperCase()} to{to.toUpperCase()}
+                            CONVERT 
                         </button>
                     </form>
                 </div>
             </div>
         </div>
     </>
-  )
+)
 }
 
 export default App

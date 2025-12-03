@@ -6,7 +6,7 @@ function Input(  {label,
     onAmountchange,
     oncurrencychange,
     currencyOptions=[],
-    selectCurrency='inr',
+    selectCurrency,
     amountdisable=false,
     className=""}){
     
@@ -44,7 +44,7 @@ function Input(  {label,
                     {/* //~ if we want to use loop then always use key */}
                         {currencyOptions.map((currency)=>(
                             <option key={currency} value={currency}>
-                                {currency}
+                                {currency.toUpperCase()}
                             </option>
                         ))}
                 
