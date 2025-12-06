@@ -1,7 +1,8 @@
 
 import './App.css'
+import Login from './Components/Login'
 import UserContextProvider from './Context/UserContextProvider'
-
+import Profile from './Components/Profile'
 function App() {
   
 
@@ -10,6 +11,8 @@ function App() {
   return (
     <UserContextProvider>
       <h1>hello I am sam </h1>
+      <Login/>
+      <Profile/>
     </UserContextProvider>
   )
 }

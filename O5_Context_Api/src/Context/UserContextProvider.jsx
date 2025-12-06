@@ -1,13 +1,13 @@
 import React, { Children } from "react";
-import usercontext from "./Context";
+import Usercontext from "./Context";
 
-const UserContextProvider=({Children})=>{
-    const[user,setUser]=React.useState(null);
+const UserContextProvider=({children})=>{
+    const[user,SetUser]=React.useState(null);
     
     return (
-        <usercontext.Provider value={{user,setUser}}>
-        {Children}
-        </usercontext.Provider>
+        <Usercontext.Provider value={{user,SetUser}}>
+        {children}
+        </Usercontext.Provider>
     )
 }
 
