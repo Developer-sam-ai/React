@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 function Queue_update() {
     const[count,setcount]=useState(0);
     function clicked(){
-        setcount(count+1)
+        setcount(count=>count+1)
     }
   return (
     <div>
