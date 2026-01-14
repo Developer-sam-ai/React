@@ -13,10 +13,10 @@ const [person,setperson]=useState({
   }
 })
 
-  function handleName(){
+  function handleName(e){
     setperson({
       ...person,
-      
+      name:e.target.value
     })
   }
 
@@ -66,8 +66,8 @@ const [person,setperson]=useState({
       <div>
         <i>we have our cutie named {person.name} from {person.artwork.city} city</i>
         <i>being the best supportor always but she is ekdam{person.artwork.title}</i>
-        <img src={person.artwork.image} alt="" />
       </div>
+      <img src={person.artwork.image} alt={person.artwork.title} />
 
     </>
   )
