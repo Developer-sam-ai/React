@@ -6,7 +6,7 @@ export default function State_Renders() {
     const[messege,setmessege]=useState('samudi');
 
     if(isSent){
-        return <h1>hello sam</h1>
+        return <h1>{messege} + it will awitch back to normal in 1 sec</h1>
     }
     function sendmsg(messege){
     }
@@ -16,8 +16,10 @@ export default function State_Renders() {
         e.preventDefault();
         setisSent(true);
         sendmsg(messege);
+        setTimeout(() => {
+            setisSent(false);
+        }, 2000);
 
-        
     }}>
         <textarea value={messege}
         onChange={e=>setmessege(e.target.value)}/>
