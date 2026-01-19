@@ -16,6 +16,8 @@ export default function State_Renders() {
         e.preventDefault();
         setisSent(true);
         sendmsg(messege);
+
+        
     }}>
         <textarea value={messege}
         onChange={e=>setmessege(e.target.value)}/>
