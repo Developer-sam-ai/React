@@ -8,7 +8,7 @@ export default function State_Renders() {
     if(isSent){
         return <h1>{messege} + it will awitch back to normal in 1 sec</h1>
     }
-    function sendmsg(messege){
+    function sendmsg(message){
     }
 
     return (
@@ -19,7 +19,6 @@ export default function State_Renders() {
         setTimeout(() => {
             setisSent(false);
         }, 2000);
-
     }}>
         <textarea value={messege}
         onChange={e=>setmessege(e.target.value)}/>

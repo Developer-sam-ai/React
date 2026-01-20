@@ -1,5 +1,5 @@
 import './App.css'
-import {State_Renders,Clock,BucketList,RenderImg,Updating_Objects} from './Components'
+import {State_Renders,Change_State_realtime,Clock,BucketList,RenderImg,Updating_Objects} from './Components'
 function App() {
 
   return (
@@ -11,6 +11,7 @@ function App() {
     <RenderImg/>
     <Clock/>
     <State_Renders/>
+    <Change_State_realtime/>
     </>
   )
 }
