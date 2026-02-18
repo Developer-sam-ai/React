@@ -9,6 +9,6 @@ import Queue_update from './Queue_update.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <Queue_update/>
+    <App/>
   </StrictMode>,
 )
