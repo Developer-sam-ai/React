@@ -16,11 +16,11 @@ export const todoSlice=createSlice({
             state.todos.push(todo);
         },
         removeTodo:(state,action)=>{
-            state.todos=state.todos.filter((todo)=>{todo.is!=action.payload})
+            state.todos=state.todos.filter((todo)=>todo.id!==action.payload)
         },
         updateTodo:(state,action)=>{
             const {id,newText}=action.payload;
-            const existingTodo=state.todos.find((todo)=>{todo.id===id});
+            const existingTodo=state.todos.find((todo)=>todo.id===id);
 
             if(existingTodo){
                 existingTodo.text=newText;
@@ -29,6 +29,5 @@ export const todoSlice=createSlice({
     }
 })
 
-export const {addTodo,removeTodo,updateTodo} = todoSlice.actions;
-
+export const {addTodo,removeTodo,updateTodo} = todoSlice.actions
 export default todoSlice.reducer
