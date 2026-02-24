@@ -1,8 +1,14 @@
 import React from 'react'
+import AddTodo from './component/AddTodo'
+import Todos from './component/Todos'
 
 function App() {
   return (
-    <div>App</div>
+    <>
+    <div>Learn Redux</div>
+    <AddTodo/>
+    <Todos/>
+    </>
   )
 }
 
