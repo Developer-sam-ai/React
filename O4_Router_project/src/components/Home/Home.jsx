@@ -1,4 +1,4 @@
-  import React from "react";
+import React from "react";
 import {Link} from 'react-router-dom';
 
 export default function Home() {
@@ -11,7 +11,6 @@ export default function Home() {
                             Download Now
                             <span className="hidden sm:block text-4xl">Lorem Ipsum</span>
                         </h2>
-
                         <Link
                             className="inline-flex text-white items-center px-6 py-3 font-medium bg-orange-700 rounded-lg hover:opacity-75"
                             to="/"
@@ -39,7 +38,6 @@ export default function Home() {
             <div className="grid  place-items-center sm:mt-20">
                 <img className="sm:w-96 w-48" src="https://fitsmallbusiness.com/wp-content/uploads/2020/09/FeatureImage_The_18_Website_Basics_Every_Site_Needs.jpg" alt="image2" />
             </div>
-
             <h1 className="text-center text-2xl sm:text-5xl py-10 font-medium">Lorem Ipsum Yojo</h1>
         </div>
     );
