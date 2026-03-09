@@ -4,16 +4,16 @@ function Home() {
 return (
     <>
 
-    <div className=' bg-slate-950 ' >
+    <div className=' bg-slate-950 h-screen' >
         <div className='h-60 flex justify-evenly'>
         <div className=' bg-slate-800 rounded-3xl shadow-sm p-4   w-full m-2'>
             <h2 className='font-bold text-white '>Water Drank</h2>
         </div>
         <div className='bg-slate-800 rounded-3xl shadow-sm p-4  w-full m-2 '>
-            <h2 className="font-bold text-white ">Total Task </h2>
+            <h2 className="font-bold text-white mb-4">Total Task </h2>
         </div>
         <div className='bg-slate-800 rounded-3xl shadow-sm p-4  w-full m-2  focus:border-blue-500'>
-            <h2 className="font-bold text-white ">Total expense</h2>
+            <h2 className="font-bold text-white mb-4">Total expense</h2>
         </div>
         </div>
         <div >
