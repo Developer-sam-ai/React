@@ -11,7 +11,7 @@ function Header() {
 return (
     <>
     <header className="bg-slate-900 text-white sticky top-0 z-50 shadow-xl">
-        <nav className='flex   justify-between items-center h-16 '>
+        <nav className='flex  justify-between items-center h-16 '>
             <div className="flex items-center gap-4 ml-2">
             <button 
             onClick={sidebaropen}
