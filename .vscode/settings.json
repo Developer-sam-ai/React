@@ -1,10 +1,13 @@
 {
     "cSpell.words": [
         "githubloader",
+        "Issidebar",
         "Setpassword",
         "Setusername",
+        "sidebaropen",
         "Themeprovider",
         "Urlid",
         "usercontext"
-    ]
+    ],
+    "liveServer.settings.port": 5501
 }
