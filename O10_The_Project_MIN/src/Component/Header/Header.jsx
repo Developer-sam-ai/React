@@ -34,7 +34,7 @@ return (
                 <div className="flex gap-8 font-bold ">
                 <Link to="/Home" className="hover:text-blue-400 p-2 rounded-md hover:bg-slate-800 focus:outline-none">Home</Link>
                 <Link to="/tasks" className="hover:text-blue-400 p-2 rounded-md hover:bg-slate-800 focus:outline-none">Tasks</Link>
-                <Link to="/Leetcode" className="hover:text-blue-400 p-2 rounded-md hover:bg-slate-800 focus:outline-none">LeetCode</Link>
+                <Link to="/Expense" className="hover:text-blue-400 p-2 rounded-md hover:bg-slate-800 focus:outline-none">Expense</Link>
                 </div>
         </div>
         </nav>
@@ -47,18 +47,31 @@ return (
     >
         <div className="p-4 flex justify-between items-center border-b border-slate-700">
             <div className="font-bold text-lg">Menu</div>
-            {/* <button onClick={sidebaropen}   className="text-slate-400 hover:text-white transition-colors bg-red-500">
-                <svg className="w-6 h-6"  bg stroke="currentColor" viewBox="0 0 24 24">
-                    {/* <path strokeLinecap="round" strokeLinejoin='round' strokeWidth="2" d="M6 18L18 6M6"/> }
-                </svg>
-            </button> */}
+            <button 
+                    onClick={sidebaropen} 
+                    className="text-slate-400 hover:text-white transition-colors bg-red-500"
+                  >
+                    <svg 
+                    className="w-6 h-6" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24"
+                    >
+                    <path 
+                        strokeLinecap="round" 
+                        strokeLinejoin="round" 
+                        strokeWidth="2" 
+                        d="M6 18L18 6M6 6l12 12" 
+                    /> 
+                    </svg>
+                </button>
 
         </div>
     
     <nav className="flex flex-col p-4 space-y-4 font-bold">
             <Link to="/Home" onClick={sidebaropen} className="hover:text-blue-400 p-2 rounded-md hover:bg-slate-800">Home</Link>
             <Link to="/tasks" onClick={sidebaropen} className="hover:text-blue-400 p-2 rounded-md hover:bg-slate-800">Tasks Board</Link>
-            <Link to="/Leetcode" onClick={sidebaropen} className="hover:text-blue-400 p-2 rounded-md hover:bg-slate-800">LeetCode Tracker</Link>
+            <Link to="/Expense" onClick={sidebaropen} className="hover:text-blue-400 p-2 rounded-md hover:bg-slate-800">Expense Tracker</Link>
         </nav>
     </div>
     </>

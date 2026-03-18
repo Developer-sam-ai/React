@@ -1,6 +1,6 @@
 
 import { createBrowserRouter,Outlet,RouterProvider } from "react-router-dom";
-import { Header,Footer,Home,Task } from "./Component";
+import { Header,Footer,Home,Task,Expense } from "./Component";
 import { Children } from "react";
 
 //~ eslint-disable-next-line react-refresh/only-export-components
@@ -29,6 +29,9 @@ const router=createBrowserRouter([
     },{
       path:"Tasks",
       element:<Task/>
+    },{
+      path:"Expense",
+      element:<Expense/>
     }
   ]
 }
