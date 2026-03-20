@@ -1,0 +1,14 @@
+import { createContext, useState } from 'react';
+
+// eslint-disable-next-line react-refresh/only-export-components
+export const PlayerContext = createContext();
+
+export function PlayerProvider({ children }) {
+  const [currentSong, setCurrentSong] = useState(null);
+
+  return (
+    <PlayerContext.Provider value={{ currentSong, setCurrentSong }}>
+      {children}
+    </PlayerContext.Provider>
+  );
+}

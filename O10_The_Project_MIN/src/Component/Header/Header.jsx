@@ -21,7 +21,7 @@ return (
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
             </button>
-                <Link to="/" className='flex items-center'>
+                <Link to="/Home" className='flex items-center'>
                     <div >
                         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQCjBf0e6brJSQOR_Jk3VTnCc5g452pCuBrQ&s"
                         className='h-10 rounded-lg w-10 mr-2'
@@ -32,8 +32,8 @@ return (
             </div>
                 <div className='mr-6'>
                 <div className="flex gap-8 font-bold ">
-                <Link to="/Home" className="hover:text-blue-400 p-2 rounded-md hover:bg-slate-800 focus:outline-none">Home</Link>
                 <Link to="/tasks" className="hover:text-blue-400 p-2 rounded-md hover:bg-slate-800 focus:outline-none">Tasks</Link>
+                <Link to="/Songs" className="hover:text-blue-400 p-2 rounded-md hover:bg-slate-800 focus:outline-none">Songs</Link>
                 <Link to="/Expense" className="hover:text-blue-400 p-2 rounded-md hover:bg-slate-800 focus:outline-none">Expense</Link>
                 </div>
         </div>
@@ -50,7 +50,7 @@ return (
             <button 
                     onClick={sidebaropen} 
                     className="text-slate-400 hover:text-white transition-colors bg-red-500"
-                  >
+                >
                     <svg 
                     className="w-6 h-6" 
                     fill="none" 
@@ -69,9 +69,9 @@ return (
         </div>
     
     <nav className="flex flex-col p-4 space-y-4 font-bold">
-            <Link to="/Home" onClick={sidebaropen} className="hover:text-blue-400 p-2 rounded-md hover:bg-slate-800">Home</Link>
-            <Link to="/tasks" onClick={sidebaropen} className="hover:text-blue-400 p-2 rounded-md hover:bg-slate-800">Tasks Board</Link>
-            <Link to="/Expense" onClick={sidebaropen} className="hover:text-blue-400 p-2 rounded-md hover:bg-slate-800">Expense Tracker</Link>
+            <Link to="/tasks" onClick={sidebaropen} className="hover:text-blue-400 p-2 rounded-md hover:bg-slate-800">Task</Link>
+            <Link to="/Songs" onClick={sidebaropen} className="hover:text-blue-400 p-2 rounded-md hover:bg-slate-800">Songs</Link>
+            <Link to="/Expense" onClick={sidebaropen} className="hover:text-blue-400 p-2 rounded-md hover:bg-slate-800">Expense Tracker </Link>
         </nav>
     </div>
     </>
